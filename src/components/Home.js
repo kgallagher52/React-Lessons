@@ -1,32 +1,15 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import axios from 'axios';
 import yoda from '../assets/images/Yoda.png';
 import anotherJedi from '../assets/images/New.png';
 import darth from '../assets/images/Darth-Vader.png';
+import { connect } from 'react-redux';
 
 class Home extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            posts: [ ]
-        };
-    }
-
-    // This is a great lifecycle to grab data
-    componentDidMount() {
-        // This is asyncrynos 
-        axios.get('http://jsonplaceholder.typicode.com/posts')
-            .then(res => {
-                console.log(res);
-                this.setState({
-                    posts: res.data.slice(0,10)
-                });
-            });
-    }   
-
+    
     render(){
-        const { posts } = this.state;
+        console.log(this.props);
+        const { posts } = this.props;
         const images = [darth, anotherJedi,yoda];
         const postList = posts.length ? ( 
             posts.map(post => {
@@ -51,5 +34,14 @@ class Home extends Component {
         )
     }
 }
+// map state to props into connect function below
+const mapStateToProps = (state) => {
+    // Represents different propreties we want to add
+    return {
+        posts: state.posts
+    }
 
-export default Home;
+}
+
+// provoking the connect function and then wrapping the home component to pass a higher order component
+export default connect(mapStateToProps)(Home);
