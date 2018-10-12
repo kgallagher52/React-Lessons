@@ -1,12 +1,6 @@
 import React from 'react';
 
-const Contact = (props) => {
-    console.log(props);
-// This function is using one of the props fields to swithc page to about after Two seconds
-    setTimeout(() => {
-        props.history.push('/about');
-    },2000);
-
+const Contact = () => {
     return (
         <div className="container">
             <h4 className="center">Contact</h4>
