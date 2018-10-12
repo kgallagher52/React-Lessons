@@ -13,4 +13,22 @@ code {
     monospace;
 }
 
+.jedi-image {
+  position: absolute;
+  left: -30px;
+  opacity: 0.5;
+  width: 200px;
+  height: auto;
+}
 
+.post {
+  overflow: hidden;
+  padding-left: 80px;
+}
+
+.card-title {
+  font-weight: 900;
+  color: black;
+  font-size: 1.0rem;
+  width: 100%;
+}

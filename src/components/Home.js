@@ -32,7 +32,7 @@ class Home extends Component {
             posts.map(post => {
                 return (
                     <div className="post card" key={post.id}>
-                        <img src={images[Math.floor(Math.random()*images.length)]} alt="image"/>
+                        <img className="jedi-image" src={images[Math.floor(Math.random()*images.length)]} alt="image"/>
                         <div className="card-content">
                             <NavLink to={'/' + post.id}><span className="card-title">{post.title}</span></NavLink>
                             {post.body}
