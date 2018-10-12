@@ -14,7 +14,7 @@ function myReducer(state = initState, action){
     if (action.type == 'ADD_TODO' ) {
         return {
             // New state of the store being returned
-            ...state, //This is a spread operator that grabs the whole state but only changes one that is specified
+            ...state, //This is a spread operator that grabs the whole state but only changes one that is specified 
             todos: [...state.todos, action.todo]
             // We are adding to the state like this so we do not edit the state directly
         }
