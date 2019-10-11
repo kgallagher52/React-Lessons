@@ -5,7 +5,7 @@ const Navbar = (props) => {
     return (
         <nav className="nav-wrapper green darken-3">
             <div className="container">
-                <a className="brand-logo">Jedi Are Strong</a>
+                <a href="/" className="brand-logo">Jedi Are Strong</a>
                 <ul className="right">
                 {/* Link makes it so the page does not always reload */}
                     <li><Link to="/">Home</Link></li>
